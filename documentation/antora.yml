@@ -1,0 +1,6 @@
+name: documentation
+title: Alexey Bogdanov on Asciidoc and Antora
+# Сборка без версии
+version: ~
+nav:
+- modules/ROOT/nav.adoc

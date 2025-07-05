@@ -1,0 +1,16 @@
+site:
+  title: Alexey Bogdanov on Asciidoc and Antora
+  #url: https://docs.demo.com
+  start_page: index.adoc
+content:
+  sources:
+  - url: ./
+    branches:
+      - HEAD
+    start_path: documentation
+ui:
+  bundle:
+    url: documentation/ui/ui-bundle
+output:
+  dir: ./build
+  clean: true
