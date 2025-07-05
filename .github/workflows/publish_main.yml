@@ -1,0 +1,56 @@
+name: Antora Build main
+on:
+  push:
+    branches: [main]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    #- name: Set up Python
+    #  uses: actions/setup-python@v4
+    #- name: Run Python create_auto_content.py
+    #  run: python auto_content/create_auto_content.py
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    - name: Install Antora
+      run: npm i antora
+    - name: Generate Site
+      run: npx antora antora-playbook.yml
+    # - name: Push result to build directory
+    #   run: |
+    #     git config user.name "github-actions[bot]"
+    #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    #     git add ./build
+    #     set +e  # Проверяем, что есть какие-то изменения в staged и если есть пушим их в папку build
+    #     git status | grep modified
+    #     if [ $? -eq 0 ]
+    #     then
+    #         set -e
+    #         git commit -am "Push build result from Action"
+    #         git push
+    #     else
+    #         set -e
+    #         echo "No changes since last build"
+    #     fi
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        path: build
+        name: docs_build

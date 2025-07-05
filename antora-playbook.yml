@@ -7,10 +7,10 @@ content:
   - url: ./
     branches:
       - HEAD
-    start_path: documentation
+    start_path: docs
 ui:
   bundle:
-    url: documentation/ui/ui-bundle
+    url: docs/ui/ui-bundle
 output:
   dir: ./build
   clean: true
