@@ -1,3 +1,3 @@
-= Alexey Bogdanov, DocOps
+= DocOps
 
-Here I will tell you about my experience on working with Asciidoc and Antora.
+My name is Alexey Bogdanov. Here I will tell you about my experience on working with Asciidoc and Antora.

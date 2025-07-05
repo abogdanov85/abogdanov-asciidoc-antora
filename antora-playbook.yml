@@ -1,7 +1,7 @@
 site:
-  title: Alexey Bogdanov on Asciidoc and Antora
+  title: Alexey Bogdanov
   #url: https://docs.demo.com
-  start_page: index.adoc
+  #start_page: ROOT::index.adoc
 content:
   sources:
   - url: ./
