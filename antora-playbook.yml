@@ -2,6 +2,8 @@ site:
   title: Alexey Bogdanov
   #url: https://docs.demo.com
   #start_page: ROOT::index.adoc
+urls:
+  html_extension_style: drop
 content:
   sources:
   - url: ./
