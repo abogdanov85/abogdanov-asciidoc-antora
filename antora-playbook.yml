@@ -1,7 +1,7 @@
 site:
   title: Alexey Bogdanov
   #url: https://docs.demo.com
-  #start_page: ROOT::index.adoc
+  #start_page: ROOT::index.adoc тест 
 urls:
   html_extension_style: drop
 content:
